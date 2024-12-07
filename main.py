@@ -2,7 +2,10 @@
 
 
 def calculate_average(grades):
-    return sum(grades) / len(grades)
+    try:
+        return sum(grades) / len(grades)
+    except ZeroDivisionError:
+        return 0
 
 
 def print_students(students):
@@ -16,9 +19,12 @@ def print_students(students):
 
 def total_average_score(students):
     average = 0
-    for student in students:
-        average += student["score_average"]
-    return average / len(students)
+    if students:
+        for student in students:
+            average += student["score_average"]
+        return average / len(students)
+    else:
+        return average
 
 
 def update_students(students):
@@ -47,6 +53,7 @@ def main():
         {"name": "Hermione", "grades": [95, 90, 97]},
         {"name": "Ron", "grades": [60, 70, 64]},
         {"name": "Draco", "grades": [60, 75, 70]},
+        {"name": "Nevil", "grades": []}
     ]
     print("\nСписок студентов: ")
     update_students(students)
