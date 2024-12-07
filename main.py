@@ -9,9 +9,9 @@ def print_students(students):
     for student in students:
         print(f"""
 Студент: {student["name"]}
-Средний балл: {student["score_average"]}
+Средний балл: {student["score_average"]:.2f}
 Статус: {student["is_success"]}""")
-    print(f"\nОбщий средний балл всех студентов: {total_average_score(students)}\n" + "_" * 50)
+    print(f"\nОбщий средний балл всех студентов: {total_average_score(students):.2f}\n" + "_" * 50)
 
 
 def total_average_score(students):
