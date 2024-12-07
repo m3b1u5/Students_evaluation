@@ -31,7 +31,7 @@ def update_students(students):
     for student in students:
         average_score = calculate_average(student["grades"])
         student["score_average"] = average_score
-        student["is_success"] = "Успешен" if average_score >= 75 else "Не успешен"
+        student["is_success"] = "Успешен" if average_score >= 75 else "Отстающий"
     print_students(students)
 
 
